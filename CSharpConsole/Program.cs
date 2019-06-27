@@ -19,7 +19,7 @@ namespace CSharpConsole
             Console.WriteLine();
             Console.WriteLine("00{0:X}", data.ToInt32());
             
-            var obj = Marshal.PtrToStructure(data, typeof(WfsCimNoteTypeList));
+            var obj =(WfsCimNoteTypeList) Marshal.PtrToStructure(data, typeof(WfsCimNoteTypeList));
             Console.ReadKey();
         }
     }
@@ -40,25 +40,19 @@ namespace CSharpConsole
     /// <summary>
     /// 
     /// </summary>
-
-    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public unsafe struct WfsCimNoteTypeList
     {
         /// <summary>
         /// 
         /// </summary>
         public ushort usNumOfNoteTypes;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public IntPtr lppNoteTypes;
     }
 
     /// <summary>
     /// 
     /// </summary>
-    [StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Ansi)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public unsafe struct WfsCimNoteType
     {
         /// <summary>

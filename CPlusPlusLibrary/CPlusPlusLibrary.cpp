@@ -13,12 +13,10 @@ typedef struct _wfs_cim_note_type
 typedef struct _wfs_cim_note_type_list
 {
 	USHORT usNumOfNoteTypes;
-	LPWFSCIMNOTETYPE *lppNoteTypes;
 } WFSCIMNOTETYPELIST;
 
 extern "C" __declspec(dllexport) WFSCIMNOTETYPELIST* __stdcall getCurrencyList() {
 	WFSCIMNOTETYPELIST list;
-	list.lppNoteTypes = nullptr;
 	list.usNumOfNoteTypes = 5;
 
 	WFSCIMNOTETYPELIST* address = &list;
