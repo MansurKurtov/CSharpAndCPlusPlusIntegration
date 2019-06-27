@@ -18,7 +18,7 @@ namespace CSharpConsole
 
             Console.WriteLine();
             Console.WriteLine("00{0:X}", data.ToInt32());
-
+            
             var obj = Marshal.PtrToStructure(data, typeof(WfsCimNoteTypeList));
             Console.ReadKey();
         }
@@ -52,10 +52,8 @@ namespace CSharpConsole
         /// <summary>
         /// 
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray)]
-        public WfsCimNoteType[] lppNoteTypes;
+        public IntPtr lppNoteTypes;
     }
-
 
     /// <summary>
     /// 
